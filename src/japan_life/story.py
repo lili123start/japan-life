@@ -31,7 +31,7 @@ def generate_scene(
         from openai import OpenAI
 
         client = OpenAI()
-        selected_model = model or os.getenv("OPENAI_MODEL", "gpt-5-mini")
+        selected_model = model or os.getenv("OPENAI_MODEL") or "gpt-5-mini"
         status = (
             f"日本語={state.japanese}, 学業={state.academics}, お金={state.money}, "
             f"健康={state.health}, 人間関係={state.relationships}, "
