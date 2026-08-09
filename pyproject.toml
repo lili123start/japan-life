@@ -1,14 +1,39 @@
 [project]
 name = "japan-life"
 version = "0.1.0"
-description = "Add your description here"
+description = "An interactive life simulator for international students starting life in Japan."
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+license = { text = "MIT" }
+authors = [
+    { name = "Li Li" }
+]
+dependencies = [
+    "matplotlib>=3.9",
+    "openai>=1.0",
+    "pandas>=2.2",
+]
 
 [project.scripts]
-japan-life = "japan_life:main"
+japan-life = "japan_life.cli:main"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.11",
+    "pytest>=8.3",
+]
 
 [build-system]
 requires = ["uv_build>=0.12.3,<0.13.0"]
 build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.12"
+disallow_untyped_defs = true
+warn_return_any = true
+warn_unused_ignores = true
+ignore_missing_imports = true

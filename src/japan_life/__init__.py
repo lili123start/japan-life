@@ -1,2 +1,5 @@
-def main() -> None:
-    print("Hello from japan-life!")
+"""Japan Life package."""
+
+from .cli import main
+
+__all__ = ["main"]
